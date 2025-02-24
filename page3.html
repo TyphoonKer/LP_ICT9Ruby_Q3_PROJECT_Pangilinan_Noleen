@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Info</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+<style>
+    body {
+        background-color: white;
+        color: black;
+        text-align: center;
+    }
+    .navbar {
+        background-color: #fac8e6;
+    }
+    .navbar-brand img {
+        width: 50px;
+        height: 50px;
+    }
+    .search-bar input {
+        width: 150px;
+    }
+    .comment-section, .help-section {
+        margin-top: 30px;
+        padding: 20px;
+        border-top: 1px solid #ddd;
+    }
+    .comment-section h2, .help-section h2 {
+        background-color: black;
+        color: white;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+    .form-control {
+        margin-bottom: 10px;
+    }
+    .btn-submit {
+        background-color: #abdbad;
+        color: black;
+        width: 100%;
+    }
+    footer {
+        margin-top: 30px;
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="SittisPc.png" alt="LRT Logo" class="rounded-circle">
+        </a>
+
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="page2.html">Train Schedule</a></li>
+            <li class="nav-item"><a class="nav-link" href="page3.html">Help</a></li>
+
+        </ul>
+        <form class="d-flex search-bar">
+            <input class="form-control" type="text" placeholder="search...">
+            <button class="btn btn-success ms-2" type="button">Search</button>
+        </form>
+    </div>
+</nav>
+
+<div class="container comment-section">
+    <h2>Leave a Comment</h2>
+    <p>We value your feedback. Talk to us.</p>
+    <form>
+        <div class="mb-3">
+            <label for="feedback" class="form-label">Feedback<span class="text-danger">*</span></label>
+            <textarea class="form-control" id="feedback" rows="4" placeholder="Type here..."></textarea>
+
+        </div>
+
+        <div class="mb-3">
+            <label for="name" class="form-label">Name<span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="name" placeholder="Enter your name">
+
+        </div>
+
+        <div class="mb-3">
+            <label for="email" class="form-label">Email<span class="text-danger">*</span></label>
+            <input type="email" class="form-control" id="email" placeholder="Enter your email">
+
+        </div>
+        <button type="button" class="btn btn-submit">Submit Feedback</button>
+    </form>
+</div>
+
+<div class="container help-section">
+
+    <h2>Help</h2>
+    <p>For any assistance, feel free to contact us.</p>
+    <p><strong>Our Office:</strong> 25 Cesar Lorenzo, BF Homes EVS</p>
+
+</div>
+
+<footer>
+    &copy; 2025 Gangilinan
+</footer>
+
+</body>
+</html>
