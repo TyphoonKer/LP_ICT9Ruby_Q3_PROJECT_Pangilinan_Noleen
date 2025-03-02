@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fare Guide</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script>
+
+        function calculateFare(isDiscounted) {
+            let discount = isDiscounted ? 0.8 : 1;
+            let pointA = document.getElementById("leaving-from").value;
+            let pointB = document.getElementById("going-to").value;
+            let dist = pointA - pointB;
+            let price = (Math.abs(dist) * 1.3636) + 11.6364;
+            let fare = price * discount;
+
+            if (pointA === "150" || pointB === "150" || pointA === pointB) {
+                alert("Please select valid locations!");
+                document.getElementById("ticket-price").textContent = "00.00";
+            } else {
+                document.getElementById("ticket-price").textContent = fare.toFixed(2);
+            }
+        }
+
+    </script>
+    <style>
+
+        body {
+            background-color: white;
+        }
+        .navbar {
+            background-color: #fac8e6;
+            padding: 10px;
+        }
+        .fare-title {
+            background-color: #fac8e6;
+            color: white;
+            padding: 10px;
+            font-weight: bold;
+            text-align: center;
+            font-size: 20px;
+
+        }
+        #From{background-color: #fac8e6;
+
+        }
+        #To{background-color: #fac8e6;
+
+}
+        .ticket-price {
+            background-color: #abdbad;
+            color: white;
+            font-size: 80px;
+            text-align: center;
+            padding: 50px;
+            font-weight: bold;
+
+        }
+        .map-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+
+        }
+        .form-label {
+            font-weight: bold;
+            background-color: black;
+            color: white;
+            display: inline-block;
+            padding: 5px 10px;
+
+        }
+        .form-select {
+            background-color: #abdbad;
+            border: none;
+            text-align: center;
+
+        }
+        .fare-buttons {
+            margin-top: 10px;
+
+        }
+        .fare-buttons button {
+            border: 1px solid #000;
+            margin-right: 5px;
+        }
+    
+        footer{text-align: center;
+
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light px-3">
+        <img src="SittisPc.png" alt="Logo" height="50px" class="me-2 rounded-circle">
+
+        <a class="navbar-brand" href="index.html">Home</a>
+        <a class="navbar-brand" href="page2.html">Train Schedule</a>
+        <a class="navbar-brand" href="page3.html">Help</a>
+
+        <div class="ms-auto">
+
+            <input class="form-control d-inline-block w-auto" type="search" placeholder="Search..." aria-label="Search">
+            <button class="btn btn-success">Search</button>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="fare-title">Fare Guide</div>
+        <div class="row">
+            <div class="col-md-6 map-container">
+                <img src="map.png" alt="Map" class="img-fluid">
+            </div>
+            
+            <div class="col-md-6">
+                <label id="From" class="form-label">LEAVING FROM:</label>
+                <select class="form-select" id="leaving-from">
+
+                    <option value="150">Select</option>
+                    <option value="0">North</option>
+                    <option value="1">Quezon</option>
+                    <option value="2">Kamuning</option>
+                    <option value="3">Cubao</option>
+                    <option value="4">Santolan</option>
+                    <option value="5">Ortigas</option>
+                    <option value="6">Shaw</option>
+                    <option value="7">Boni</option>
+                    <option value="8">Guadalupe</option>
+                    <option value="9">Buendia</option>
+                    <option value="10">Ayala</option>
+                    <option value="11">Magallanes</option>
+            
+
+                </select>
+
+                <label id="To" class="form-label mt-3">GOING TO:</label>
+                <select class="form-select" id="going-to">
+               
+                    <option value="150">Select</option>
+                    <option value="0">North</option>
+                    <option value="1">Quezon</option>
+                    <option value="2">Kamuning</option>
+                    <option value="3">Cubao</option>
+                    <option value="4">Santolan</option>
+                    <option value="5">Ortigas</option>
+                    <option value="6">Shaw</option>
+                    <option value="7">Boni</option>
+                    <option value="8">Guadalupe</option>
+                    <option value="9">Buendia</option>
+                    <option value="10">Ayala</option>
+                    <option value="11">Magallanes</option>
+            
+
+                </select>
+
+                <div class="fare-buttons">
+                    <button onclick="calculateFare(false)" class="btn btn-warning">Regular Fare</button>
+                    <button onclick="calculateFare(true)" class="btn btn-danger">Discounted Fare</button>
+                </div>
+
+                <div class="mt-3 text-center">
+                    <img src="download.png" alt="Train Card" class="img-fluid" width="200">
+
+                </div>
+            </div>
+
+            <div class="col-md-12 mt-4 text-center">
+                <div class="ticket-price" id="ticket-price">00.00</div>
+
+            </div>
+        </div>
+    </div>
+    
+    <footer>   &copy; 2025 Gangilinan  </footer>
+</body>
+</html>
