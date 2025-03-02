@@ -20,7 +20,8 @@
         padding: 15px;
     }
 
-    #trainSh{margin-top: 60px; text-align: center; background-color: rgb(250, 200, 230); margin-left: 10px;margin-right: 10px
+    #trainSh{margin-top: 60px; text-align: center; background-color: rgb(250, 200, 230); margin-left: 10px;margin-right: 10px;
+        color: white;
 
     }
 
@@ -43,24 +44,20 @@
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="SittisPc.png" alt="LRT Logo" class="rounded-circle">
-            </a>
-    
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="page2.html">Train Schedule</a></li>
-                <li class="nav-item"><a class="nav-link" href="page3.html">Help</a></li>
-    
-            </ul>
-            <form class="d-flex search-bar">
-                <input class="form-control" type="text" placeholder="search...">
-                <button class="btn btn-success ms-2" type="button">Search</button>
-            </form>
+    <nav class="navbar navbar-expand-lg navbar-light px-3">
+        <img src="SittisPc.png" alt="Logo" height="50px" class="me-2 rounded-circle">
+
+        <a class="navbar-brand" href="index.html">Home</a>
+        <a class="navbar-brand" href="page2.html">Train Schedule</a>
+        <a class="navbar-brand" href="page3.html">Help</a>
+
+        <div class="ms-auto">
+
+            <input class="form-control d-inline-block w-auto" type="search" placeholder="Search..." aria-label="Search">
+            <button class="btn btn-success">Search</button>
         </div>
     </nav>
+
     
     <h1 id="trainSh">Train Schedule</h1>
     <table class="table table-striped">
